@@ -17,7 +17,6 @@ interface AppConfig {
     env: string;
     timezone: string;
     port: number;
-    origin: string;
     isProduction: boolean;
     isDevelopment: boolean;
     keepAliveTimeout: number;
@@ -34,13 +33,12 @@ interface AppConfig {
 
 export const serverConfig: AppConfig = {
     env: parseEnvStr("NODE_ENV", "development"),
-    timezone: parseEnvStr("TZ", "America/Sao Paulo"),
-    port: parseEnvInt("SERVER_PORT", 8080),
-    origin: parseEnvStr("SERVER_ORIGIN", "http://localhost:8080"),
+    timezone: "America/Sao Paulo",
+    port: 8080,
     isProduction: process.env.NODE_ENV === "production",
     isDevelopment: process.env.NODE_ENV === "development",
-    keepAliveTimeout: parseEnvInt("SERVER_KEEP_ALIVE_TIMEOUT", 61 * 1000),
-    headersTimeout: parseEnvInt("SERVER_HEADERS_TIMEOUT", 62 * 1000),
+    keepAliveTimeout: 61 * 1000,
+    headersTimeout: 62 * 1000,
     mpauth: parseEnvStr("MP_AUTH", "credencial-mpauth-aqui"),
     vtalConfig: {
         authUrl: parseEnvStr("VTAL_AUTH_URL", "https://api.vtal.com.br/auth/oauth/v2/token?grant_type=client_credentials"),
