@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  vtal-external-provider-api:
+    image: vtal-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
