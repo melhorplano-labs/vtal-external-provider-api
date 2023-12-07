@@ -22,6 +22,7 @@ interface AppConfig {
     isDevelopment: boolean;
     keepAliveTimeout: number;
     headersTimeout: number;
+    mpauth: string;
     vtalConfig: {
         authUrl: string;
         baseUrl: string;
@@ -40,11 +41,12 @@ export const serverConfig: AppConfig = {
     isDevelopment: process.env.NODE_ENV === "development",
     keepAliveTimeout: parseEnvInt("SERVER_KEEP_ALIVE_TIMEOUT", 61 * 1000),
     headersTimeout: parseEnvInt("SERVER_HEADERS_TIMEOUT", 62 * 1000),
+    mpauth: parseEnvStr("MP_AUTH", "credencial-mpauth-aqui"),
     vtalConfig: {
         authUrl: parseEnvStr("VTAL_AUTH_URL", "https://api.vtal.com.br/auth/oauth/v2/token?grant_type=client_credentials"),
         baseUrl: parseEnvStr("VTAL_BASE_URL", "https://api.vtal.com.br/api"),
-        username: parseEnvStr("VTAL_USERNAME"),
-        password: parseEnvStr("VTAL_PASSWORD"),
-        scope: parseEnvStr("VTAL_SCOPE"),
+        username: parseEnvStr("VTAL_USERNAME", "seu-usuario-aqui"),
+        password: parseEnvStr("VTAL_PASSWORD", "sua-senha-aqui"),
+        scope: parseEnvStr("VTAL_SCOPE", "seu-scope-aqui"),
     },
 };

@@ -5,8 +5,9 @@ import { getRoutes } from "./routes";
 
 export function buildApp() {
     const app = express();
+    app.use(express.json());
 
-    app.use("/api", getRoutes());
+    app.use(getRoutes());
 
     return http.createServer(app);
 }
