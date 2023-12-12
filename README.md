@@ -22,3 +22,8 @@ Para executar o repositório localmente durante o desenvolvimento, será necess�
 $ npm i
 $ npm run dev
 ```
+
+Para montar e subir um container Docker, a partir do arquivo `docker-compose`, pode ser executado o seguinte comando:
+```
+$ docker-compose up -d --build
+```
