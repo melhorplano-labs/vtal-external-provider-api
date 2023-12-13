@@ -14,16 +14,27 @@ ser configuradas e armazenadas em um local seguro.
 - **VTAL_PASSWORD**: Senha da Vtal
 - **VTAL_SCOPE**: Escopo/Modalidade da API da Vtal
 
-# Começando
+# Subindo o projeto
 
-Para executar o repositório localmente durante o desenvolvimento, será necessário ter o Node instalado na máquina. Após feita a configuração das variáveis de ambiente, basta executar os comandos abaixo:
+Para colocar o projeto em produção, é preciso primeiro preenchar as variáves de ambiente de acordo com as credenciais da Vtal e da senha definida para uso da Melhor Plano.
+
+Para o próximo passo iremos precisar do Docker instalado na máquina.
+
+O Docker é uma plataforma que utiliza contêineres para simplificar o desenvolvimento, distribuição e execução de aplicativos. Ele encapsula software e suas dependências, proporcionando consistência e portabilidade em vários ambientes. Os contêineres facilitam o desenvolvimento, colaboração e implantação eficiente de software.
+
+Para instalar o Docker basta seguir os passos indicados no site oficial: https://docs.docker.com/engine/install/ubuntu/
+
+Para montar e subir um container Docker, a partir do arquivo `docker-compose`, basta executar o seguinte comando:
+```
+$ docker-compose up -d --build
+```
+
+# [Opcional] Testando localmente
+
+Caso exista a necessidade de testar o projeto localmente, será necessário ter o Node instalado na máquina. Após feita a configuração das variáveis de ambiente, basta executar os comandos abaixo:
 
 ```
 $ npm i
 $ npm run dev
 ```
 
-Para montar e subir um container Docker, a partir do arquivo `docker-compose`, pode ser executado o seguinte comando:
-```
-$ docker-compose up -d --build
-```
