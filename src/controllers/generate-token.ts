@@ -7,6 +7,6 @@ export async function generateToken(req: Request, res: Response): Promise<Respon
         return res.status(200).json(token);
     } catch (error) {
         console.error(error);
-        return res.status(500).end();
+        return res.status(error?.response?.status || 500).json(error);
     }
 }

@@ -9,6 +9,6 @@ export async function findGeograficAddress(req: Request, res: Response): Promise
         return res.status(200).json(addressData);
     } catch (error) {
         console.error(error);
-        return res.status(500).end();
+        return res.status(error?.response?.status || 500).json(error);
     }
 }
