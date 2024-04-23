@@ -9,6 +9,6 @@ export async function findCoverage(req: Request, res: Response): Promise<Respons
         return res.status(200).json(coverage);
     } catch (error) {
         console.error(error);
-        return res.status(500).end();
+        return res.status(error?.response?.status || 500).json(error);
     }
 }
